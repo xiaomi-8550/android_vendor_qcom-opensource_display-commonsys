@@ -3,6 +3,7 @@ soong_config_module_type {
     module_type: "cc_defaults",
     config_namespace: "qtidisplaycommonsys",
     bool_variables: [
+        "gralloc_handle_has_no_custom_content_md_reserved_size",
         "gralloc_handle_has_no_reserved_size",
     ],
     properties: [
@@ -13,6 +14,9 @@ soong_config_module_type {
 qtidisplaycommonsys_cc_defaults {
     name: "qtidisplaycommonsys_defaults",
     soong_config_variables: {
+        gralloc_handle_has_no_custom_content_md_reserved_size: {
+            cflags: ["-DGRALLOC_HANDLE_HAS_NO_CUSTOM_CONTENT_MD_RESERVED_SIZE"],
+        },
         gralloc_handle_has_no_reserved_size: {
             cflags: ["-DGRALLOC_HANDLE_HAS_NO_RESERVED_SIZE"],
         },
